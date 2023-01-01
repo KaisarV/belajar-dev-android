@@ -1,5 +1,7 @@
 package com.calc.belajar_dev_android
 
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -19,6 +21,20 @@ class MainActivity : AppCompatActivity() {
         sayHelloTextView = findViewById(R.id.sayHelloTextView)
     }
 
+    private fun checkFingerprint(){
+        if(packageManager.hasSystemFeature(PackageManager.FEATURE_FINGERPRINT)){
+            Log.i("FEATURE", "enable fingerprint feature")
+        }else {
+            Log.i("FEATURE", "disable fingerprint feature")
+        }
+    }
+
+    private fun checkPlatformVersion(){
+        if(Build.VERSION.SDK_INT < Build.VERSION_CODES.O){
+            Log.i("VERSION", "disabled some features")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.hello_world)
@@ -28,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         sayHelloTextView.text = resources.getString(R.string.app_name)
 
         sayHelloButton.setOnClickListener{
+            checkFingerprint()
 //            Log.d("PGZN", "This is debug log")
 //            Log.i("PGZN", "This is info log")
 //            Log.w("PGZN", "This is warning log")
