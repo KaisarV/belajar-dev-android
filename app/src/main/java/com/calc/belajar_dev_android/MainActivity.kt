@@ -33,6 +33,18 @@ class MainActivity : AppCompatActivity() {
 //            Log.w("PGZN", "This is warning log")
 //            Log.e("PGZN", "This is error log")
 
+            val json = assets.open("sample.json")
+                .bufferedReader()
+                .use{it.readText()}
+
+            Log.i("ASSET", json)
+
+            val sample = resources.openRawResource(R.raw.sample)
+                .bufferedReader()
+                .use{it.readText()}
+
+            Log.i("RAW", sample)
+
             Log.i("ValueResource", resources.getBoolean(R.bool.isProductionMode).toString())
             Log.i("ValueResource", resources.getInteger(R.integer.maxPage).toString())
             Log.i("ValueResource", resources.getIntArray(R.array.numbers).toString())
