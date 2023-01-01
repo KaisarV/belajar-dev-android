@@ -10,7 +10,6 @@
         android:layout_height = "100dp"
         android:layout_gravity = "center_horizontal"
         android:src ="@drawable/pzn"
-        android:
         />
 
     <include layout="@layout/say_hello_form"/>
