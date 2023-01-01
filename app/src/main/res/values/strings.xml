@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">belajar-dev-android</string>
+    <string name="nameEditText">Name : </string>
+    <string name="sayHelloButton">Say Hello</string>
+    <string name="sayHelloTextView">Hello %1$s</string>
+
+    <string-array name="names">
+        <item>Kaisar</item>
+        <item>Fredi</item>
+        <item>Valentino</item>
+    </string-array>
+</resources>
